@@ -33,8 +33,7 @@ function draw() {
     const [firstWord] = visibleWords;
     if (visibleWords.length && firstWord.y > height) {
         lose();
-    }
-    else if(!words.length && round >= MAX_ROUNDS && !visibleWords.length) {
+    } else if(!words.length && round >= MAX_ROUNDS && !visibleWords.length) {
         win();
     }
 
