@@ -33,7 +33,10 @@ function draw() {
     const [firstWord] = visibleWords;
     if (visibleWords.length && firstWord.y > height) {
         lose();
+    } else if(!words.length && round >= MAX_ROUNDS && !visibleWords.length) {
+        win();
     }
+
 }
 
 function keyTyped() {
@@ -101,8 +104,6 @@ function addWord() {
         if(round < MAX_ROUNDS) {
             words.push(...getWords());
             round++;
-        } else if(!visibleWords.length){
-            win();
         }
     } else {
         visibleWords.push(words.pop());
